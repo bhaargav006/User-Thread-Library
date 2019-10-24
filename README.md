@@ -1,10 +1,22 @@
 # User-Thread-Library
 
+OVERVIEW
 
+This project was implemented as a part of the OS course at the University of Minnesota.  
+
+The project focuses on implementing basic thread library functionality, along with the relevant APIs for the control of the threads that are created/deleted by the self-declared APIs. With the help of the implemented APIs, basic Round-Robin scheduling is implemented in a preemptive fashion. Few test cases are written to showcase the multithreaded nature of the code that is written with the help of a few toy examples that showcase simple calculations.
+Engineers in the industry are sometimes required to implement their own thread library due to:
+
+1. The absence of a ​pthread​ library on some embedded systems;
+2. The need for fine-grained control over thread behaviour; and 
+3. Efficiency
+
+The user-level thread library can replace the default pthread library for general use as it provides similar functionalities.
 
 TESTS
 
 A. test_all_APIs.cpp: 
+
 	Description - tests all APIs. The test does the following:
   
 		1. Spawns 10 threads
@@ -16,6 +28,7 @@ A. test_all_APIs.cpp:
 		7. Print output
 
 B. test_array_sum.cpp: 
+
 	Description - Computes the sum of an array by spawning given number of threads. The test does the following:
   
 		1.Accepts number of threads as an argument
@@ -26,6 +39,7 @@ B. test_array_sum.cpp:
 		6.Print output
     
 C. test_lock.cpp
+
 	Description - Tests lock. The test does the following:
   
 		1.Accepts number of threads as an argument
@@ -34,6 +48,7 @@ C. test_lock.cpp
 		4.Print output
     
 D. test_suspend_resume.cpp
+
 	Description - Tests suspend and resume. The test does the following:
   
 		1.Spawns 10 threads
