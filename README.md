@@ -9,9 +9,25 @@ Engineers in the industry are sometimes required to implement their own thread l
 
 1. The absence of a ​pthread​ library on some embedded systems;
 2. The need for fine-grained control over thread behaviour; and 
-3. Efficiency
+3. The lack of efficiency in the pre-existing library. 
 
 The user-level thread library can replace the default pthread library for general use as it provides similar functionalities.
+
+APIs AVAILABLE
+
+The project has been implemented only using sigsetjmp and siglngjmp to swap context. None of the inbuild data structures are used to facilitate it. There are no blocking sytem calls to the kernel. It uses a *round robin scheuler with preemption*.  
+
+	1. int uthread_create(void *(*start_routine)(void *), void *arg); // returns tid
+	2. int uthread_yield(void); // return value not meaningful
+	3. int uthread_self(void); // returns tid
+	4. int uthread_join(int tid, void **retval); 
+	5. int uthread_init(int time_slice); // init the time slice
+	6. int uthread_terminate(int tid); 
+	7. int uthread_suspend(int tid); //puts it in suspended state and wont run until resumed
+	8. int uthread_resume(int tid); //puts it in ready queue
+	9. int lock_init (lock_t*);
+	10. int acquire (lock_t*); //uses atomic test-and-set to implement this
+	11. int release (lock_t*);
 
 TESTS
 
