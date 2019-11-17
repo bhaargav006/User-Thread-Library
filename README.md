@@ -4,8 +4,8 @@ OVERVIEW
 
 This project was implemented as a part of the OS course at the University of Minnesota.  
 
-The project focuses on implementing basic thread library functionality, along with the relevant APIs for the control of the threads that are created/deleted by the self-declared APIs. With the help of the implemented APIs, basic Round-Robin scheduling is implemented in a preemptive fashion. Few test cases are written to showcase the multithreaded nature of the code that is written with the help of a few toy examples that showcase simple calculations.
-Engineers in the industry are sometimes required to implement their own thread library due to:
+The project focuses on implementing an user level thread library with basic functionality, along with the relevant APIs for the control of the threads that are created/deleted by the self-declared APIs. With the help of the implemented APIs, basic Round-Robin scheduling is used in a preemptive fashion. Few test cases are written to showcase the multithreaded nature of the code that is written with the help of a few toy examples that showcase simple calculations.
+Engineers in the industry are sometimes required to build their own thread library due to:
 
 1. The absence of a ​pthread​ library on some embedded systems;
 2. The need for fine-grained control over thread behaviour; and 
