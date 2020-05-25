@@ -15,7 +15,7 @@ The user-level thread library can replace the default pthread library for genera
 
 APIs AVAILABLE
 
-The project has been implemented only using sigsetjmp and siglngjmp to swap context. None of the inbuild data structures are used to facilitate it. There are no blocking sytem calls to the kernel. It uses a *round robin scheuler with preemption*.  
+The project has been implemented only using sigsetjmp and siglngjmp to swap context. None of the inbuild data structures are used to facilitate it. There are no blocking sytem calls to the kernel. It uses a *round robin scheduler with preemption*.  
 
 	1. int uthread_create(void *(*start_routine)(void *), void *arg); // returns tid
 	2. int uthread_yield(void); // return value not meaningful
